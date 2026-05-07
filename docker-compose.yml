@@ -1,0 +1,40 @@
+services:
+  polydial-admin:
+    build: polydial-admin
+    container_name: polydial-admin
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./polydial-admin:/app
+      - /app/node_modules
+    restart: unless-stopped
+
+  polydial-restaurant-portal:
+    build: polydial-restaurant-portal
+    container_name: polydial-restaurant-portal
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./polydial-restaurant-portal:/app
+      - /app/node_modules
+    restart: unless-stopped
+
+  polydial-customer:
+    build: polydial-customer
+    container_name: polydial-customer
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./polydial-customer:/app
+      - /app/node_modules
+    restart: unless-stopped
+
+  polydial-egypt:
+    build: polydial-egypt
+    container_name: polydial-egypt
+    ports:
+      - "3003:3003"
+    volumes:
+      - ./polydial-egypt:/app
+      - /app/node_modules
+    restart: unless-stopped
